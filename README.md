@@ -49,7 +49,7 @@ To experiment in a minimum of effort what this library is doing, follow the step
 
 1. git clone https://github.com/Azure-samples/flask-reactize
 2. cd flask-reactize
-3. code .
+3. run `code .` to open the repository in [vscode](https://code.visualstudio.com/) (if the command is not available, activate it [here](https://code.visualstudio.com/docs/setup/setup-overview)).
 
 Once [vscode](https://code.visualstudio.com/) is opened, build the development container:
 
