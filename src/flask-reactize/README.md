@@ -191,7 +191,7 @@ const getUsers = async () => {
 
 More info and sample code can be found on [Github](https://github.com/azure-samples/flask-reactize).
 
-## Known limitions
+## Known limitation
 
 As of today:
 

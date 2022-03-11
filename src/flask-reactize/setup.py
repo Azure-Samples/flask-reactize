@@ -12,7 +12,7 @@ setup(
     name="flask-reactize",
     package_dir={"": "src"},
     packages=["flask_reactize"],
-    version="1.0.0a3",
+    version="1.0.1",
     author="Julien Chomarat",
     license="MIT",
     author_email="juchomar@microsoft.com",
