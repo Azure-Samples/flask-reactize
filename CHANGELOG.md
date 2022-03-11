@@ -1,13 +1,12 @@
-## [project-title] Changelog
+## flask-reactize Changelog
 
-<a name="x.y.z"></a>
-# x.y.z (yyyy-mm-dd)
+<a name="1.0.0a3"></a>
+# 1.0.0a3
 
-*Features*
-* ...
+initial version
 
-*Bug Fixes*
-* ...
+<a name="1.0.0"></a>
+# 1.0.0
 
-*Breaking Changes*
-* ...
+* Final version.
+* Update package description file & repository URL.

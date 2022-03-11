@@ -66,7 +66,9 @@ You can now build the *flask-reactize* container to test *flask-reactize* in eit
 
 > If running the commands above result in an access is denied for the file `/var/run/docker.sock`, ensure that your user is the owner of this file. If it is not the case, run `sudo chown alex:alex /var/run/docker.sock` in the terminal.
 
-You can now open your browser and load the url [http://localhost:8080](http://localhost:8080)
+You can now open your browser and load the url [http://localhost:8080](http://localhost:8080).
+
+This sample uses [req|res](https://reqres.in/api) test APIs.
 
 ### Use this library in your project
 
@@ -81,6 +83,10 @@ You can deploy your web application on Azure following one of the following meth
 1. Using [Web App for Containers](https://docs.microsoft.com/en-us/azure/app-service/quickstart-custom-container?tabs=dotnet&pivots=container-linux),
 2. Using a [Web App](https://docs.microsoft.com/en-US/azure/app-service/quickstart-python?tabs=flask%2Cwindows%2Cazure-portal%2Cterminal-bash%2Cvscode-deploy%2Cdeploy-instructions-azportal%2Cdeploy-instructions-zip-azcli),
 3. Using [Azure Kubernetes Service](https://azure.microsoft.com/en-us/services/kubernetes-service/#overview) in a multi-scalable containers scenario.
+
+## Changelog
+
+Changelog can be found [here](./CHANGELOG.md).
 
 ## Contributing
 
