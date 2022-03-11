@@ -16,32 +16,30 @@ For production, you can compile your [React JS](https://reactjs.org/) applicatio
 
 However, if your [React JS](https://reactjs.org/) calls external APIs (whether there are customs, or public) you will face security issues.
 
-In addition, if your APIs require to be logged in, this is not going to be easy to implement.
-
 ## Features
 
 *flask-reactize* is a boostrap to serve any [React JS](https://reactjs.org/) via a Python back-end, using [Flask](https://flask.palletsprojects.com/en/2.0.x/) as web framework. 
 
-Your back-end web server can be anything: [Flask](https://flask.palletsprojects.com/en/2.0.x/) itself (Although not recommended for production), [Uvicorn](https://www.uvicorn.org/), [Gunicorn](https://gunicorn.org/) etc.
+Your back-end web server can be anything: [Flask](https://flask.palletsprojects.com/en/2.0.x/) itself (although not recommended for production), [Uvicorn](https://www.uvicorn.org/), [Gunicorn](https://gunicorn.org/) etc.
 
-In a nutshell, *flask-reactize* is a proxy for your [React JS](https://reactjs.org/) application and for your APIs.
+In a nutshell, *flask-reactize* is a proxy for your [React JS](https://reactjs.org/) application and for your APIs:
 
 * It has a development mode: a nodejs server is transparently started by the Python back-end,
 * It supports production mode: this back-end can also serve your static assets,
 * It supports hot reload while developing: changing the Python code or the React code will trigger a browser refresh,
-* It supports proxying multiple APIs via a specific route name.
+* It supports proxying multiple APIs via specific routes.
 
 ## Getting Started
 
 Here is what you are going to find in this repo:
 
-* Under *src/flask-reactize* you will find the Python module (also available via [PyPi](https://pypi.org/project/flask-reactize/)). [More info](./src/flask-reactize/README.md),
-* Under *sample/* you will find a simple demo site built with [React JS](https://reactjs.org/) using *flask-reactize*. [More info on how to use it](./sample/README.md),
-* Two *DockerFile* for Python 3.8 and Python 3.10. To run them.
+* Under *src/flask-reactize* you will find the Python module (also available via [PyPi](https://pypi.org/project/flask-reactize/)),
+* Under *sample/* you will find a simple demo site built with [React JS](https://reactjs.org/) using *flask-reactize*,
+* Two *DockerFile* for Python 3.8 and Python 3.10.
 
 ### Prerequisites
 
-* [vscode](https://code.visualstudio.com/) installed because you are going to use [DevContainers](https://code.visualstudio.com/docs/remote/containers) to have all prerequisites without any hassle,
+* [vscode](https://code.visualstudio.com/) because you are going to use [DevContainers](https://code.visualstudio.com/docs/remote/containers) to have all prerequisites without any hassle,
 * [Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack) extension,
 * [docker](https://www.docker.com/)
 

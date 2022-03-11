@@ -16,20 +16,18 @@ For production, you can compile your [React JS](https://reactjs.org/) applicatio
 
 However, if your [React JS](https://reactjs.org/) calls external APIs (whether there are customs, or public) you will face security issues.
 
-In addition, if your APIs require to be logged in, this is not going to be easy to implement.
-
 ## Features
 
 *flask-reactize* is a boostrap to serve any [React JS](https://reactjs.org/) via a Python back-end, using [Flask](https://flask.palletsprojects.com/en/2.0.x/) as web framework. 
 
-Your back-end web server can be anything: [Flask](https://flask.palletsprojects.com/en/2.0.x/) itself (Although not recommended for production), [Uvicorn](https://www.uvicorn.org/), [Gunicorn](https://gunicorn.org/) etc.
+Your back-end web server can be anything: [Flask](https://flask.palletsprojects.com/en/2.0.x/) itself (although not recommended for production), [Uvicorn](https://www.uvicorn.org/), [Gunicorn](https://gunicorn.org/) etc.
 
-In a nutshell, *flask-reactize* is a proxy for your [React JS](https://reactjs.org/) application and for your APIs.
+In a nutshell, *flask-reactize* is a proxy for your [React JS](https://reactjs.org/) application and for your APIs:
 
 * It has a development mode: a nodejs server is transparently started by the Python back-end,
 * It supports production mode: this back-end can also serve your static assets,
 * It supports hot reload while developing: changing the Python code or the React code will trigger a browser refresh,
-* It supports proxying multiple APIs via a specific route name.
+* It supports proxying multiple APIs via specific routes.
 
 ## Installation
 
@@ -191,7 +189,7 @@ const getUsers = async () => {
 
 `/someApi/users` will be processed by the Python application, replaced with `http://some-api/api/users` and called. The output of the remote endpoint will be sent *as it is* to the client.
 
-More info and sample code can be found on [Github](https://github.com/jchomarat/flask-reactize).
+More info and sample code can be found on [Github](https://github.com/azure-amples/flask-reactize).
 
 ## Known limitions
 
