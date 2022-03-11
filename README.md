@@ -71,13 +71,13 @@ You can now build the *flask-reactize* container to test *flask-reactize* in eit
 
 You can now open your browser and load the url [http://localhost:8080](http://localhost:8080)
 
-## Use this library in your project
+### Use this library in your project
 
 **Please note** that you need to be on a *nix system for that, whether you are on Linux, Mac or Windows with [WSL](https://docs.microsoft.com/en-us/windows/wsl/about).
 
 Instructions to follow can be found [here](./src/flask-reactize/README.md).
 
-## Deploy to Azure
+### Deploy to Azure
 
 You can deploy your web application on Azure following one of the following methods (non exhaustive list):
 
