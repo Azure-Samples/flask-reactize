@@ -189,7 +189,7 @@ const getUsers = async () => {
 
 `/someApi/users` will be processed by the Python application, replaced with `http://some-api/api/users` and called. The output of the remote endpoint will be sent *as it is* to the client.
 
-More info and sample code can be found on [Github](https://github.com/azure-amples/flask-reactize).
+More info and sample code can be found on [Github](https://github.com/azure-samples/flask-reactize).
 
 ## Known limitions
 
