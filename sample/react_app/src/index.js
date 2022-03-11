@@ -1,0 +1,21 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import reportWebVitals from './reportWebVitals';
+
+import UsersList from "./usersList"
+import UserAdd from "./userAdd"
+
+ReactDOM.render(
+  <React.StrictMode>
+    <h1>Demo site for <i>flask-reactize</i></h1>
+    <UsersList />
+    <UserAdd />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();

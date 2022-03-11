@@ -1,0 +1,16 @@
+# Add autocompletion to make targets (so that one can input > make [tab])
+complete -W "`grep -oE '^[a-zA-Z0-9_.-]+:([^=]|$)' /workspace/?akefile | sed 's/[^a-zA-Z0-9_.-]*$//'`" make
+
+# Add autocompletion to git commands
+source /usr/share/bash-completion/completions/git
+
+# Add aliases
+alias ll='ls -halp'
+
+# Add .local/bin to PATH (Python libraries)
+export PATH="$HOME/.local/bin:$PATH"
+
+# Set permissions on docker.sock for docker cli in docker
+if [ -e /var/run/docker.sock ]; then
+    sudo chown alex:alex /var/run/docker.sock;
+fi

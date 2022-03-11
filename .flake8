@@ -1,0 +1,12 @@
+[flake8]
+# Recommend matching the black line length (default 88),
+# rather than using the flake8 default of 79:
+max-line-length = 128
+exclude =
+    .git,
+    __pycache__,
+    build,
+    dist,
+extend-ignore =
+    # See https://github.com/PyCQA/pycodestyle/issues/373
+    E203,

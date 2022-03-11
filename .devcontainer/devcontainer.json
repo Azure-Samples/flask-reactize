@@ -1,0 +1,29 @@
+/* devcontainer.json files support JSON with Comments (jsonc)! */
+
+{
+    "name": "flask-reactize",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "workspace-flask-reactize",
+    "context": ".",
+    "workspaceFolder": "/workspace",
+    // Install ESLint and Peacock extensions
+    "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-azuretools.vscode-docker",
+        "irongeek.vscode-env"
+    ],
+    "settings": {
+        "python.pythonPath": "/usr/bin/python3",
+        "python.envFile": "${workspaceFolder}/python-path.env",
+        "python.formatting.provider": "black",
+        "python.testing.nosetestsEnabled": false,
+        "python.testing.pytestEnabled": true
+    },
+    "mounts": [
+        "source=/var/run/docker.sock,target=/var/run/docker-host.sock,type=bind"
+    ],
+    "runArgs": [
+        "--init"
+    ]
+}

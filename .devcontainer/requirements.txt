@@ -1,0 +1,9 @@
+setuptools==59.4.0
+wheel==0.37.0
+pytest==6.2.5
+pytest-cov==3.0.0
+twine
+requests-mock==1.9.3
+black==21.11b1
+flake8==4.0.1
+isort==5.10.1
