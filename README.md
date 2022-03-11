@@ -68,7 +68,7 @@ You can now build the *flask-reactize* container to test *flask-reactize* in eit
 
 You can now open your browser and load the url [http://localhost:8080](http://localhost:8080).
 
-This sample uses [req|res](https://reqres.in/api) test APIs.
+This sample uses [req|res](https://reqres.in) test APIs.
 
 ### Use this library in your project
 
