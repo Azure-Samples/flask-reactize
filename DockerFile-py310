@@ -1,0 +1,16 @@
+FROM python:3.10-slim-buster
+
+EXPOSE 80
+
+ENV MODE="prod"
+
+WORKDIR /app
+
+COPY ./sample/main.py /app
+COPY ./sample/static /app/static
+
+RUN python3 -m pip install pip --upgrade
+
+RUN python -m pip install gunicorn==20.1.0 flask-reactize
+
+CMD ["gunicorn", "--bind", "0.0.0.0:80", "--log-level", "debug", "main:app"]
