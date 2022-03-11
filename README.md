@@ -4,7 +4,6 @@
 
 Developing a ReactJS application requires to use nodejs as back end server.
 What if you want to consume external APIs: how are you going to handle cross origin calls?
-What if you want to secure your application and APIs easily?
 
 In modern days, as we are now, [React JS](https://reactjs.org/) offers many nice functionalities to develop an application easily, from any IDE.
 
