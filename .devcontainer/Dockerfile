@@ -4,10 +4,6 @@
 ARG VARIANT="3.9-bullseye" # (Actual value is set in .devcontainer/devcontainer.json)
 FROM mcr.microsoft.com/vscode/devcontainers/python:0-${VARIANT}
 
-# [Choice] Node.js version: none, lts/*, 16, 14, 12, 10
-ARG NODE_VERSION="16"
-RUN if [ "${NODE_VERSION}" != "none" ]; then su vscode -c "umask 0002 && . /usr/local/share/nvm/nvm.sh && nvm install ${NODE_VERSION} 2>&1"; fi
-
 # Install required libraries
 ADD requirements.txt /tmp/pip-tmp/
 RUN pip3 --disable-pip-version-check --no-cache-dir install -r /tmp/pip-tmp/requirements.txt \

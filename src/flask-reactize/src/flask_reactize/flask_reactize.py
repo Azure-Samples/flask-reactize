@@ -43,12 +43,6 @@ class FlaskReactize:
         if not os.path.exists(static_folder):
             raise ValueError("static_folder must must be a valid folder.")
 
-        print(static_folder)
-
-        # Set the static
-        self.flask_app.static_folder = static_folder
-        self.flask_app.static_url_path = "/static"
-
         # Clear Flask default static route
         clear_flask_default_status_rule(self.flask_app, False)
 
@@ -60,16 +54,13 @@ class FlaskReactize:
         self.flask_app.add_url_rule(
             "/",
             endpoint="/",
-            view_func=lambda: self.__send_static(static_folder, ""),
-            methods=["GET"],
+            view_func=lambda: self.__send_static(static_folder, "")
         )
 
         self.flask_app.add_url_rule(
-            "/<path:path>",
-            defaults={"path": ""},
-            endpoint="/<path:path>",
-            view_func=lambda path: self.__send_static(static_folder, path),
-            methods=["GET"],
+            "/<path:filename>",
+            endpoint="static",
+            view_func=lambda filename: self.__send_static(static_folder, filename)
         )
 
     def __send_static(self, static_folder: str, path: str) -> Response:
@@ -77,8 +68,6 @@ class FlaskReactize:
         Serve a static file. It is an internal method and should not
         be called directly.
         """
-        print("static_folder: " + static_folder)
-        print("p: " + path)
 
         if path != "" and os.path.exists(static_folder + "/" + path):
             return send_from_directory(static_folder, path)
@@ -102,10 +91,10 @@ class FlaskReactize:
         """
 
         if source_react_folder is None:
-            raise ValueError("static_folder must be provided.")
+            raise ValueError("source_react_folder must be provided.")
 
         if not os.path.exists(source_react_folder):
-            raise ValueError("static_folder must must be a valid folder.")
+            raise ValueError("source_react_folder must must be a valid folder.")
 
         # Make sure that at the first request, the node server is started.
         # Note: there are not "startup" event, so, it is basically
@@ -131,23 +120,26 @@ class FlaskReactize:
             "/",
             endpoint="/",
             defaults={"filePath": ""},
-            view_func=lambda filePath: self.__route_react_http(port, filePath),
-            methods=["get"],
+            view_func=lambda filePath: self.__route_react_http(port, filePath)
         )
 
+        # Now the default rule is mandatory. It removes the static prefix, so let's add it
+        # with the last boolean in route_react_http
         self.flask_app.add_url_rule(
-            "/<path:filePath>",
-            "/<path:filePath>",
-            lambda filePath: self.__route_react_http(port, filePath),
+            "/<path:filename>",
+            "static",
+            lambda filename: self.__route_react_http(port, filename, True),
         )
 
-    def __route_react_http(self, port: int, filePath: str) -> Response:
+    def __route_react_http(self, port: int, filePath: str, isStatic: bool = False) -> Response:
         """
         Serve react files by routing calls to the underlying nodejs app.
         It is an internal method and should not be called directly.
         """
 
-        react_app_url = f"http://127.0.0.1:{port}/{filePath}"
+        filePath = f"static/{filePath}" if isStatic else filePath
+
+        react_app_url = f"http://localhost:{port}/{filePath}"
 
         try:
             react_response = requests.get(react_app_url)
