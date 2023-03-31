@@ -64,7 +64,7 @@ You can now build the *flask-reactize* container to test *flask-reactize* in eit
 2. OR run `make docker-build-sample-py310` in the terminal for Python 3.10
 3. then run `make docker-run-sample` to start the sample demo site
 
-> If running the commands above result in an access is denied for the file `/var/run/docker.sock`, ensure that your user is the owner of this file. If it is not the case, run `sudo chown alex:alex /var/run/docker.sock` in the terminal.
+> If running the commands above result in an access is denied for the file `/var/run/docker.sock`, ensure that your user is the owner of this file. If it is not the case, run `sudo chown vscode:vscode /var/run/docker.sock` in the terminal.
 
 You can now open your browser and load the url [http://localhost:8080](http://localhost:8080).
 

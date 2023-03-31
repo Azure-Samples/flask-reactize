@@ -6,8 +6,8 @@ ENV MODE="prod"
 
 WORKDIR /app
 
-COPY ./sample/main.py /app
-COPY ./sample/static /app/static
+ADD ./sample/main.py /app
+ADD ./sample/static /app/static
 
 RUN python3 -m pip install pip --upgrade
 

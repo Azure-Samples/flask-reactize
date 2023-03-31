@@ -43,11 +43,14 @@ class FlaskReactize:
         if not os.path.exists(static_folder):
             raise ValueError("static_folder must must be a valid folder.")
 
+        print(static_folder)
+
         # Set the static
         self.flask_app.static_folder = static_folder
+        self.flask_app.static_url_path = "/static"
 
         # Clear Flask default static route
-        clear_flask_default_status_rule(self.flask_app)
+        clear_flask_default_status_rule(self.flask_app, False)
 
         # If proxy_api is not empty, register routes for proxying APIs
         if proxy_api is not None:
@@ -74,6 +77,8 @@ class FlaskReactize:
         Serve a static file. It is an internal method and should not
         be called directly.
         """
+        print("static_folder: " + static_folder)
+        print("p: " + path)
 
         if path != "" and os.path.exists(static_folder + "/" + path):
             return send_from_directory(static_folder, path)

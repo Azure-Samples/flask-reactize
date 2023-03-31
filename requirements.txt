@@ -7,3 +7,5 @@ requests-mock==1.9.3
 black==21.11b1
 flake8==4.0.1
 isort==5.10.1
+flask==2.0.2
+requests==2.26.0
